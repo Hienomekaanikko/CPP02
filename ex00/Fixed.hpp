@@ -21,15 +21,10 @@ class Fixed
 		int					fixed_point_nbr;
 		static const int	fract_bits = 8;
 	public:
-		//constructor
 		Fixed();
-		//copy constructor
 		Fixed(const Fixed& other);
-		//copy assignment operator
 		Fixed& operator=(const Fixed& other);
-		//destructor
 		~Fixed();
-		//member functions
 		int getRawBits( void ) const;
 		void setRawBits( int const raw );
 };
