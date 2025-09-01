@@ -3,7 +3,7 @@ FLAGS = -Wall -Werror -Wextra
 SRC = Fixed.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 RM = rm -f
-NAME = a.out
+NAME = fixed
 
 all: $(NAME)
 
@@ -19,4 +19,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-

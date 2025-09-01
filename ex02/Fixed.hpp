@@ -29,17 +29,14 @@ class Fixed
 		Fixed(const int);
 		Fixed(const float);
 
-		// Conversion
 		float toFloat(void) const;
 		int toInt(void) const;
 
-		// Arithmetic operators
 		Fixed operator+(const Fixed& other) const;
 		Fixed operator-(const Fixed& other) const;
 		Fixed operator*(const Fixed& other) const;
 		Fixed operator/(const Fixed& other) const;
 
-		// Comparison operators
 		bool operator>(const Fixed& other) const;
 		bool operator<(const Fixed& other) const;
 		bool operator>=(const Fixed& other) const;
@@ -47,11 +44,9 @@ class Fixed
 		bool operator==(const Fixed& other) const;
 		bool operator!=(const Fixed& other) const;
 
-		// Increment operators (if you want)
-		Fixed& operator++();    // pre-increment
-		Fixed operator++(int);  // post-increment
+		Fixed& operator++();
+		Fixed operator++(int);
 
-		// Static max/min (optional)
 		static Fixed& max(Fixed& a, Fixed& b);
 		static const Fixed& max(const Fixed& a, const Fixed& b);
 };

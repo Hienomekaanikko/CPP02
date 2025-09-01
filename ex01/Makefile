@@ -1,21 +1,24 @@
 CC = c++
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = Fixed.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
-NAME = a.out
 RM = rm -f
+NAME = fixed
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)
 
-fclean: clean
-	$(RM) $(NAME)
+fclean:
+	$(RM) $(OBJ) $(NAME)
 
-re: fclean all
+re:
+	clean
+	rm -f $(NAME)
 
 .PHONY: all clean fclean re
+
