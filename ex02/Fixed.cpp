@@ -6,7 +6,7 @@
 /*   By: msuokas <msuokas@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/16 14:22:40 by msuokas           #+#    #+#             */
-/*   Updated: 2025/07/16 15:18:19 by msuokas          ###   ########.fr       */
+/*   Updated: 2025/09/02 15:47:57 by msuokas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,19 @@ Fixed Fixed::operator++(int)
 	return temp;
 }
 
+Fixed& Fixed::operator--()
+{
+	this->fixed_point_nbr--;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this);
+	this->fixed_point_nbr--;
+	return temp;
+}
+
 Fixed& Fixed::max(Fixed& a, Fixed& b)
 {
 	if (a > b)
@@ -155,6 +168,22 @@ Fixed& Fixed::max(Fixed& a, Fixed& b)
 
 
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
+
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a < b)
+		return a;
+	else
+		return b;
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 {
 	if (a < b)
 		return a;
